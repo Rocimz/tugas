@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class kategori extends Model
 {
     use HasFactory;
+    protected $table='kategori';
+    protected $guarded=['id'];
+
+    function produk(){
+        return $this->belongsTo(produk::class);
+    }
 }
