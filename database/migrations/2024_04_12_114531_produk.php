@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('namaproduk');
+            $table->string('foto');
             $table->integer('harga');
             $table->integer('descproduk');
             $table->timestamps();
