@@ -57,7 +57,8 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $produkshow=produk::findOrFail($id);
+        return view('produk/tampildataperid',compact('produkshow'));
     }
 
     /**

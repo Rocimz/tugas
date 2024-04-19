@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\kategoricontroller;
+use App\Http\Controllers\postcontroller;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 Route::resource('/produk', ProdukController::class);
 Route::resource('/kategori', kategoricontroller::class);
+Route::resource('/post', postcontroller::class);
