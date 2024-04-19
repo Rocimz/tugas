@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\produk;
 use Illuminate\Http\Request;
 
@@ -57,7 +58,7 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        $produkshow=produk::findOrFail($id);
+        $produkshow=produk::with('post','kategori')->find($id);
         return view('produk/tampildataperid',compact('produkshow'));
     }
 

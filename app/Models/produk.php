@@ -12,9 +12,9 @@ class produk extends Model
     protected $guarded=['id'];
 
     function post() {
-        return $this->hasMany(post::class);
+        return $this->belongsTo(post::class,'id');
     }
     function kategori(){
-        return $this->hasMany(kategori::class);
+        return $this->belongsTo(kategori::class,'id');
     }
 }
