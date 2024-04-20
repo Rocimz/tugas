@@ -19,25 +19,29 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Prakerja</a>
+                <a class="navbar-brand" href="#!">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{route('kategori.index')}}">Kategori</a></li>
-                                <li><a class="dropdown-item" href="{{route('post.index')}}">Postingan</a></li>
-                                <li><a class="dropdown-item" href="{{route('produk.index')}}">Produk</a></li>
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <div class="d-flex">
+                    <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            Login
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -47,12 +51,12 @@
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{asset('storage/'.$produkshow->foto)}}" alt="..." style="max-width: 100%;max-height:76%;"/></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">{{$produkshow->post->tanggaldibuat}}</div>
-                        <h1 class="display-5 fw-bolder">{{$produkshow->post->judul}}</h1>
+                        <div class="small mb-1">SKU: BST-498</div>
+                        <h1 class="display-5 fw-bolder">NUR ROKHIM</h1>
                         <div class="fs-5 mb-5">
                             <span>$40.00</span>
                         </div>
-                        <p class="lead">{{$produkshow->post->tanggaldibuat}}</p>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                         
                     </div>
                 </div>

@@ -59,7 +59,9 @@ class ProdukController extends Controller
     public function show(string $id)
     {
         $produkshow=produk::with('post','kategori')->find($id);
-        return view('produk/tampildataperid',compact('produkshow'));
+        $produk=produk::all();
+        
+        return view('produk/tampildataperid',compact('produkshow','produk'));
     }
 
     /**

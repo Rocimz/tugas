@@ -3,6 +3,7 @@
 use App\Http\Controllers\kategoricontroller;
 use App\Http\Controllers\postcontroller;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\utamacontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('', utamacontroller::class);
 Route::resource('/produk', ProdukController::class);
 Route::resource('/kategori', kategoricontroller::class);
 Route::resource('/post', postcontroller::class);
