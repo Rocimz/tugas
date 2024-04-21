@@ -34,7 +34,6 @@ class kategoricontroller extends Controller
         $valid=$request->validate([
             'namakategori'=>'string|required',
             'desckategori'=>'required|string',
-            'produk_id'=>'required'
         ]);
         kategori::create($valid);
         return redirect('kategori');
@@ -66,7 +65,6 @@ class kategoricontroller extends Controller
         $valid=$request->validate([
             'namakategori'=>'string|required',
             'desckategori'=>'required|string',
-            'produk_id'=>'required'
         ]);
         kategori::find($id)->update($valid);
         return redirect('kategori');

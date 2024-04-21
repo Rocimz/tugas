@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('home', utamacontroller::class);
 Route::resource('', utamacontroller::class);
 Route::resource('/produk', ProdukController::class);
 Route::resource('/kategori', kategoricontroller::class);
 Route::resource('/post', postcontroller::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

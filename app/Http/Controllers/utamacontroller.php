@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class utamacontroller extends Controller
 {
@@ -39,8 +41,16 @@ class utamacontroller extends Controller
     {
         $produkshow=produk::with('kategori','post')->find($id);
         $produk=produk::all();
+        $relevan = DB::table('produk')
+    ->join('kategori', 'produk.kategori_id', '=', 'kategori.id')
+    ->join('post', 'produk.id', '=', 'post.produk_id')
+    ->where('produk.kategori_id', $id)
+    ->get();
+
+
+
         
-        return view('produk/tampildataperid',compact('produkshow','produk'));
+        return view('produk/tampildataperid',compact('produkshow','produk','kategori'));
     }
 
     /**

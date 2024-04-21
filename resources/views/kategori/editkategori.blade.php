@@ -11,14 +11,6 @@
       <label for="exampleInputPassword1">Diskon Kategori</label>
       <input type="number" class="form-control" name="desckategori" value="{{$data->desckategori}}">
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Nama Produk</label>
-      <select class="form-select form-select-sm" name="produk_id">
-        @foreach ($data2 as $item)
-        <option value="{{$item->id}}" @selected($data->produk_id==$item->id)>{{$item->namaproduk}}</option>
-        @endforeach
-      </select>
-    </div>
   </div>
   
   <!-- /.card-body -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kategori;
 use App\Models\produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdukController extends Controller
 {
@@ -22,7 +23,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('produk/tambahproduk');
+        $kategori=kategori::all();
+        return view('produk/tambahproduk',compact('kategori'));
     }
 
     /**
@@ -35,6 +37,7 @@ class ProdukController extends Controller
             'foto'=>'required|max:2000|mimes:png,jpg',
             'harga'=>'required|integer',
             'descproduk'=>'required|integer',
+            'kategori_id'=>'required',
         ]);
         /*$foto = $request->file('foto');
 
@@ -60,8 +63,15 @@ class ProdukController extends Controller
     {
         $produkshow=produk::with('post','kategori')->find($id);
         $produk=produk::all();
+        $relevan = DB::table('produk')
+    ->join('kategori', 'produk.kategori_id', '=', 'kategori.id')
+    ->join('post', 'produk.id', '=', 'post.produk_id')
+    ->where('produk.kategori_id', $id)
+    ->get();
+
+
         
-        return view('produk/tampildataperid',compact('produkshow','produk'));
+        return view('produk/tampildataperid',compact('produkshow','produk','relevan'));
     }
 
     /**
@@ -70,7 +80,8 @@ class ProdukController extends Controller
     public function edit(string $id)
     {
         $data=produk::find($id);
-        return view('produk/editproduk',compact('data'));
+        $kategori=kategori::all();
+        return view('produk/editproduk',compact('data','kategori'));
     }
 
     /**
@@ -82,6 +93,7 @@ class ProdukController extends Controller
             'namaproduk'=>'required|string',
             'harga'=>'required|integer',
             'descproduk'=>'required|integer',
+            'kategori_id'=>'required|integer'
         ]);
         $foto=produk::findOrFail($id);        
         if ($request->hasFile('foto')) {

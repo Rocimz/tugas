@@ -23,6 +23,14 @@ Tambah Post
             <input type="file" class="form-control" id="foto" name="foto">
         </div>
     </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nama Produk</label>
+      <select class="form-select form-select-sm" name="kategori_id">
+        @foreach ($kategori as $produk)
+        <option value="{{$produk->id}}">{{$produk->namakategori}}</option>
+        @endforeach
+      </select>
+    </div>
     
     <!-- /.card-body -->
 

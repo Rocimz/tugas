@@ -23,7 +23,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('home.index')}}">Home</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -47,13 +47,13 @@
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{asset('storage/'.$produkshow->foto)}}" alt="..." style="max-width: 100%;max-height:76%;"/></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">{{$produkshow->post->tanggaldibuat}}</div>
                         <h1 class="display-5 fw-bolder">{{$produkshow->post->judul}}</h1>
-                        <div class="fs-5 mb-5">
-                            <span>$40.00</span>
-                        </div>
-                        <p class="lead">{{$produkshow->post->tanggaldibuat}}</p>
-                        
+                        <div class="small mb-1">{{$produkshow->post->tanggaldibuat}}</div>
+                        <p>{{$produkshow->post->isi}}</p>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <div class="small mb-1">Nur Rokhim</div>
+                          </div>
+                          
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <h2 class="fw-bolder mb-4">Related products</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    @foreach ( $produk as $item)
+                    @foreach ($relevan as $item)
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->

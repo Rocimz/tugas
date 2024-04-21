@@ -1,7 +1,6 @@
-
-Tambah Post
-
+@extends('template')
 @section('body')
+<h1 class="mb-4">Edit Produk</h1>
 <form action="{{route('produk.update',$data->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -25,10 +24,16 @@ Tambah Post
             <input type="file" class="form-control" id="foto" name="foto" value="{{$data->foto}}">
         </div>
     </div>
-    
-    <!-- /.card-body -->
-
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nama Produk</label>
+      <select class="form-select form-select-sm" name="kategori_id">
+        @foreach ($kategori as $produk)
+        <option value="{{$produk->id}}" @selected($produk->id==$data->kategori_id) >{{$produk->namakategori}}</option>
+        @endforeach
+      </select>
+    </div>
     <div class="card-footer">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>
+@endsection

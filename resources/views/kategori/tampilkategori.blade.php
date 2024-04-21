@@ -7,7 +7,6 @@
         <th scope="col">No</th>
         <th scope="col">Nama Kategori</th>
         <th scope="col">Diskon Kategori</th>
-        <th scope="col">Nama Kategori</th>
         <th scope="col">Action</th>
       </tr>
     </thead>    
@@ -17,7 +16,6 @@
         <th scope="row">{{$loop->iteration}}</th>
         <td>{{$item->namakategori}}</td> 
         <td>{{$item->desckategori}}</td>
-        <td>{{$item->produk->namaproduk}}</td>
         <td class="no-wrap-text"> 
           <div class="btn-group" role="group" aria-label="Basic example">
               <a href="{{route('kategori.edit',$item->id)}}" class="btn btn-warning">Edit</a>&nbsp&nbsp
