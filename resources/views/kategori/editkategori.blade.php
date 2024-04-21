@@ -1,7 +1,9 @@
 @extends('template')
+@section('body')
 <form action="{{route('kategori.update',$data->id)}}" method="POST">
 @csrf
 @method('PUT')
+<h1>Edit Kategori</h1>
 <div class="card-body">
     <div class="form-group">
       <label for="exampleInputEmail1">Nama Kategori</label>
@@ -14,8 +16,9 @@
   </div>
   
   <!-- /.card-body -->
-
+  <br>
   <div class="card-footer">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+@endsection

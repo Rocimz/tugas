@@ -1,6 +1,8 @@
 @extends('template')
+@section('body')
 <form action="{{route('post.store')}}" method="POST">
 @csrf
+<h1>Tambah Postingan</h1>
 <div class="card-body">
     <div class="form-group">
       <label for="exampleInputEmail1">Judul</label>
@@ -25,8 +27,9 @@
   </div>
   
   <!-- /.card-body -->
-
+  <br>
   <div class="card-footer">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+@endsection

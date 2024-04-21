@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Prakerja Nur Rokhim</title>
+        <title>Wes Makmur</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -25,7 +25,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Prakerja</a>
+                <a class="navbar-brand" href="#!">WES MAKMUR</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -36,6 +36,7 @@
                                 <li><a class="dropdown-item" href="{{route('kategori.index')}}">Kategori</a></li>
                                 <li><a class="dropdown-item" href="{{route('post.index')}}">Postingan</a></li>
                                 <li><a class="dropdown-item" href="{{route('produk.index')}}">Produk</a></li>
+                                <li><a class="dropdown-item" href="{{route('user.index')}}">User</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -75,14 +76,18 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{asset('IMG_3086.JPG')}}" alt="..." style="max-width: 100%;max-height:76%;"/></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">SKU: BST-498</div>
-                        <h1 class="display-5 fw-bolder">NUR ROKHIM</h1>
-                        <div class="fs-5 mb-5">
-                            <span>$40.00</span>
-                        </div>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                    <div class="col-md-5"><img class="card-img-top mb-5 mb-md-0" src="{{asset('IMG_3086.JPG')}}" alt="..." style="max-width: 100%;max-height:76%;"/></div>
+                    <div class="col-md-7">
+                        <h1 class="display-5 fw-bolder">TOKO WES MAKMUR</h1>
+                        <p class="lead">🎉🏠 Promo Spesial di Toko Wes Makmur! 🏠🎉</p>
+
+                            <p>Temukan segala kebutuhan peralatan rumah Anda mulai dari dalam hingga luar rumah dengan harga istimewa hanya di Toko Wes Makmur! Kami menawarkan beragam produk berkualitas dengan harga terjangkau untuk membuat rumah Anda menjadi tempat yang nyaman dan indah.</p>
+                            
+                            <p>🛋️ Peralatan Rumah Tangga 🍽️<br>
+                            Dari peralatan dapur yang fungsional hingga dekorasi rumah yang menawan, kami memiliki semua yang Anda butuhkan untuk mempercantik rumah Anda.</p>
+                            
+                                <p>🌳 Peralatan Taman dan Outdoor 🌻<br>
+                            Jadikan halaman belakang Anda sebagai tempat yang menyenangkan untuk bersantai dengan koleksi peralatan taman dan outdoor kami. Dari kursi taman yang nyaman hingga peralatan grilling yang berkualitas, kami memiliki semuanya!</p>
                         
                     </div>
                 </div>
@@ -91,7 +96,7 @@
         <!-- Related items section-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Related products</h2>
+                <h2 class="fw-bolder mb-4">Produk</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     @foreach ( $data as $item)
                     <div class="col mb-5">

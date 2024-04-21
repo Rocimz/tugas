@@ -1,5 +1,6 @@
 @extends('template')
-<h1>Kategori</h1>
+@section('body')
+<h1>Postingan</h1>
 <a href="{{route('post.create')}}" class="btn btn-primary">Tambah Data</a>
 <table class="table">
     <thead>
@@ -33,3 +34,4 @@
       @endforeach     
     </tbody>
   </table>
+@endsection

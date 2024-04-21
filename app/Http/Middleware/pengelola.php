@@ -16,9 +16,11 @@ class pengelola
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role == 'admin') {
+        if (Auth::user()->role == 'Admin') {
             return $next($request);
-        } elseif (Auth::user()->role != 'admin') {
+        } elseif (Auth::user()->role = 'Editor') {
+            return $next($request);
+        } elseif (Auth::user()->role != 'Admin') {
             return redirect('login');
         }
         

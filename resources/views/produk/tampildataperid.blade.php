@@ -48,7 +48,7 @@
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{asset('storage/'.$produkshow->foto)}}" alt="..." style="max-width: 100%;max-height:76%;"/></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder">{{$produkshow->post->judul}}</h1>
-                        <div class="small mb-1">{{$produkshow->post->tanggaldibuat}}</div>
+                        <div class="small mb-1">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $produkshow->post->->tanggaldibuat)->format('d F Y') }}</div>
                         <p>{{$produkshow->post->isi}}</p>
                         <div class="d-flex justify-content-end align-items-end">
                             <div class="small mb-1">Nur Rokhim</div>

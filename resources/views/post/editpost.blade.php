@@ -1,7 +1,9 @@
 @extends('template')
+@section('body')
 <form action="{{route('post.update',$data->id)}}" method="POST">
 @csrf
 @method('PUT')
+<h1>Edit Post</h1>
 <div class="card-body">
     <div class="form-group">
       <label for="exampleInputEmail1">Judul</label>
@@ -26,8 +28,9 @@
   </div>
   
   <!-- /.card-body -->
-
+  <br>
   <div class="card-footer">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+@endsection

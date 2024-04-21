@@ -3,6 +3,7 @@
 use App\Http\Controllers\kategoricontroller;
 use App\Http\Controllers\postcontroller;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\utamacontroller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ Route::resource('index', utamacontroller::class);
 Route::resource('/produk', ProdukController::class)->middleware(['auth','pengelola']);
 Route::resource('/kategori', kategoricontroller::class)->middleware(['auth','pengelola']);
 Route::resource('/post', postcontroller::class)->middleware(['auth','pengelola']);;
+Route::resource('/user', usercontroller::class)->middleware(['auth','pengelola']);;
 
 Auth::routes();
 
