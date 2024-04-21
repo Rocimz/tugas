@@ -12,8 +12,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
-    <style>
-    </style>
+        <style>
+            footer{
+                position: absolute;
+                bottom: auto;
+                width: 100%;
+                height: 100px;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -34,9 +40,33 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            Login
-                        </button>
+                        {{-- <a class="btn btn-outline-dark" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{__('logout')}}
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </a> --}}
+                        @if (@Auth::check())
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                        @else
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        @endif
                     </div>
                 </div>
             </div>
