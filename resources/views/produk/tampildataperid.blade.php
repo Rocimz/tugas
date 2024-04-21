@@ -51,7 +51,7 @@
                         <div class="small mb-1">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $produkshow->post->->tanggaldibuat)->format('d F Y') }}</div>
                         <p>{{$produkshow->post->isi}}</p>
                         <div class="d-flex justify-content-end align-items-end">
-                            <div class="small mb-1">Nur Rokhim</div>
+                            <div class="small mb-1"><i>Nur Rokhim</i></div>
                           </div>
                           
                     </div>
